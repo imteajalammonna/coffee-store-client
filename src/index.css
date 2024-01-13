@@ -29,3 +29,28 @@
     color: white;
     border: 2px solid white;
 }
+
+.button-footer {
+    color: #242222;
+    font-family: Rancho;
+    padding: 5px 15px;
+    color: #331A15;
+    font-family: Rancho;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 50px;
+    background: transparent;
+    border: 2px solid #331A15;
+    transition: 0.5s ease;
+}
+
+.button-footer:hover {
+    background: #E3B577;
+    color: white;
+    border: 2px solid #331A15;
+}
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
