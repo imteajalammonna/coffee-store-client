@@ -17,18 +17,18 @@ const Header = () => {
         <Link to="/services" className="hover:text-gray-300">Services</Link>
         <Link to="/contact" className="hover:text-gray-300">Contact</Link></>
     return (
-        <header className="bg-cover bg-center h-[7vh] text-white " style={{ backgroundImage: `url(${header})` }}>
-            <div className="flex items-center justify-around">
+        <header className="md:bg-cover bg-center  h-[8vh] text-white " style={{ backgroundImage: `url(${header})` }}>
+            <div className="flex items-center justify-between pt-2 mx-4 md:justify-around">
                 <div className="flex items-center">
-                    <img className="md:w-[55px] md:h-[60px] h-10 mr-2" src={logo1} alt="" />
-                    <h1 className=" text-2xl md:text-5xl text-white">Espresso Emporium</h1>
+                    <img className=" h-10 mr-2  md:w-[55px] lg:h-[60px] md:h-12 lg:w-12 xl:w-20  " src={logo1} alt="" />
+                    <h1 className=" text-3xl md:text-4xl lg:text-5xl  text-white">Espresso Emporium</h1>
                 </div>
                 <nav className="md:hidden">
-                    <button onClick={toggleMenu} className="text-white hover:text-gray-300">
+                    <button onClick={toggleMenu} className="text-white text-3xl hover:text-gray-300">
                         {isMenuOpen ? <RxCross2></RxCross2> : <HiMenuAlt3></HiMenuAlt3>}
                     </button>
                 </nav>
-                <nav className={`md:flex space-x-8 text-2xl ${isMenuOpen ? 'flex p-5 mt-32 bg-slate-400 flex-col absolute' : 'hidden'}`}>
+                <nav className={`md:flex md:space-x-8 text-2xl transition-all ${isMenuOpen ? ' p-5 mt-32 bg-slate-400 flex flex-col absolute' : 'hidden'}`}>
                     {links}
                 </nav>
             </div>

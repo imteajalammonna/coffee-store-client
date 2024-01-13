@@ -12,14 +12,14 @@ const Features = () => {
     ];
 
     return (
-        <section className="bg-[#ECEAE3] h-80 py-16">
-            <div className="container mx-auto text-center">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <section className="bg-[#ECEAE3]  md:h-[700px] lg:h-[650px] xl:h-[400px] py-16">
+            <div className="md:container mx-auto text-center">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {featuresData.map((feature, index) => (
-                        <div key={index} className=" p-6 rounded-lg shadow-xl flex items-center justify-center flex-col">
+                        <div key={index} className="m-5 p-6  flex items-center justify-center flex-col md:m-5">
                             <img className="w-16 mb-4" src={feature.image} alt="" /> 
                             <h3 className="text-3xl font-bold mb-2">{feature.title}</h3>
-                            <p className="text-gray-600">{feature.description}</p>
+                            <p className="text-gray-600 text-xl">{feature.description}</p>
                         </div>
                     ))}
                 </div>
