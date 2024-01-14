@@ -8,7 +8,7 @@ const Footer = () => {
         <footer >
             <div className="bg-gray-800  flex text-[#331A15] py-12 md:h-[700px]" style={{ backgroundImage: `url(${backgroundImg})` }}>
                 <div className=" mx-5 w-11/12 flex md:flex-row flex-col-reverse items-center lg:container md:mx-auto md:justify-around">
-                    <div className=" mb-6 md:w-2/4 md:mb-0 space-y-5 md:space-y-7">
+                    <div className=" mb-6 md:w-2/4 md:mb-0 space-y-5 md:ml-16 md:space-y-7">
                         <div className="flex items-center">
                             <img className="w-16 mr-5" src={logo} alt="" />
                             <h4 className=" text-2xl md:text-5xl font-semibold text-shadow">Espresso Emporium</h4>
@@ -37,7 +37,7 @@ const Footer = () => {
                     </div>
 
                     <div className="mb-10 mt-5 md:ml-28 w-full  md:mb-0 md:mx-auto md:w-1/3 ">
-                        <h4 className=" text-3xl text-center md:text-5xl font-semibold mb-6 text-shadow">Connect with Us</h4>
+                        <h4 className=" text-3xl text-center md:text-5xl font-semibold mb-16 text-shadow">Connect with Us</h4>
                         <form>
                             <div className="mb-4 ">
                                 <input type="text" placeholder="Name" className="w-full p-2 border-gray-500 rounded" />

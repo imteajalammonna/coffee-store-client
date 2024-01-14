@@ -12,10 +12,10 @@ const Header = () => {
         setIsMenuOpen(!isMenuOpen);
     };
     const links = <>
-        <Link to="/" className="hover:text-gray-300">Home</Link>
-        <Link to="/about" className="hover:text-gray-300">About</Link>
-        <Link to="/services" className="hover:text-gray-300">Services</Link>
-        <Link to="/contact" className="hover:text-gray-300">Contact</Link></>
+        <Link to="/" className="hover:text-[#E3B577] duration-300">Home</Link>
+        <Link to="/about" className="hover:text-[#E3B577] duration-300">About</Link>
+        <Link to="/services" className="hover:text-[#E3B577] duration-300">Services</Link>
+        <Link to="/contact" className="hover:text-[#E3B577] duration-300">Contact</Link></>
     return (
         <header className="md:bg-cover bg-center  h-[8vh] text-white " style={{ backgroundImage: `url(${header})` }}>
             <div className="flex items-center justify-between pt-2 mx-4 md:justify-around">
