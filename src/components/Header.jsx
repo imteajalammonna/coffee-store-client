@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import header from "../assets/images/more/15.jpg"
 import logo1 from "../assets/images/more/logo1.png";
 import { HiMenuAlt3 } from "react-icons/hi";
@@ -12,10 +12,10 @@ const Header = () => {
         setIsMenuOpen(!isMenuOpen);
     };
     const links = <>
-        <Link to="/" className="hover:text-[#E3B577] duration-300">Home</Link>
-        <Link to="/about" className="hover:text-[#E3B577] duration-300">About</Link>
-        <Link to="/services" className="hover:text-[#E3B577] duration-300">Services</Link>
-        <Link to="/contact" className="hover:text-[#E3B577] duration-300">Contact</Link></>
+        <NavLink activeClassName="active" exact to="/" className="hover:text-[#E3B577] duration-300">Home</NavLink>
+        <NavLink activeClassName="active" to="/productForm" className="hover:text-[#E3B577] duration-300">ProductForm</NavLink>
+        <NavLink activeClassName="active" to="/services" className="hover:text-[#E3B577] duration-300">Services</NavLink>
+        <NavLink activeClassName="active" to="/contact" className="hover:text-[#E3B577] duration-300">Contact</NavLink></>
     return (
         <header className="md:bg-cover bg-center  h-[8vh] text-white " style={{ backgroundImage: `url(${header})` }}>
             <div className="flex items-center justify-between pt-2 mx-4 md:justify-around">

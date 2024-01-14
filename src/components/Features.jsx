@@ -14,7 +14,7 @@ const Features = () => {
     return (
         <section className="bg-[#ECEAE3]  md:h-[700px] lg:h-[650px] xl:h-[400px] py-16">
             <div className="md:container mx-auto text-center">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8">
                     {featuresData.map((feature, index) => (
                         <div key={index} className="m-5 p-6  flex items-center justify-center flex-col md:m-5">
                             <img className="w-16 mb-4" src={feature.image} alt="" /> 

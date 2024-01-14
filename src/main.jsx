@@ -7,16 +7,23 @@ import {
 import "./index.css";
 import App from "./App";
 import Home from "./Pages/Home";
+import Error from "./Pages/Error";
+import ProductForm from "./Pages/ProductForm";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
         element: <Home></Home>
-      }
+      },
+      {
+        path: "/productForm",
+        element: <ProductForm></ProductForm>
+      },
     ]
   },
 ]);

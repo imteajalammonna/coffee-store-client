@@ -9,6 +9,10 @@
 
 }
 
+.active {
+    color: #E3B577;
+}
+
 .button {
     color: #242222;
     font-family: Rancho;
@@ -16,18 +20,26 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    width: 130px;
+    /* width: 130px; */
     height: 48px;
     flex-shrink: 0;
     background: #E3B577;
     border: 2px solid #E3B577;
     transition: 0.5s ease;
+    outline-offset: 4px;
+    outline: 3px solid #E3B577;
+    
+    
+    
 }
 
 .button:hover {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+    /* background: transparent; */
+    /* color: white; */
+    opacity: 0.8;
+    transform: scale(.9) ;
+    /* border: 2px solid white; */
+    /* outline: 3px solid white; */
 }
 
 .button-footer {
@@ -49,7 +61,7 @@
 .button-footer:hover {
     background: #E3B577;
     color: white;
-    border: 2px solid #331A15;
+    border: 2px solid #E3B577;
 }
 .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
