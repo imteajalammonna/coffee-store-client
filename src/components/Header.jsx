@@ -12,16 +12,16 @@ const Header = () => {
         setIsMenuOpen(!isMenuOpen);
     };
     const links = <>
-        <NavLink activeClassName="active" exact to="/" className="hover:text-[#E3B577] duration-300">Home</NavLink>
-        <NavLink activeClassName="active" to="/productForm" className="hover:text-[#E3B577] duration-300">ProductForm</NavLink>
-        <NavLink activeClassName="active" to="/services" className="hover:text-[#E3B577] duration-300">Services</NavLink>
-        <NavLink activeClassName="active" to="/contact" className="hover:text-[#E3B577] duration-300">Contact</NavLink></>
+        <NavLink to="/" className="hover:text-[#E3B577] duration-300">Home</NavLink>
+        <NavLink to="/productForm" className="hover:text-[#E3B577] duration-300">ProductForm</NavLink>
+        <NavLink to="/coffees" className="hover:text-[#E3B577] duration-300">Coffees</NavLink>
+        <NavLink to="/contact" className="hover:text-[#E3B577] duration-300">Contact</NavLink></>
     return (
-        <header className="md:bg-cover bg-center  h-[8vh] text-white " style={{ backgroundImage: `url(${header})` }}>
+        <header className="md:bg-cover bg-center  h-[7vh] text-white " style={{ backgroundImage: `url(${header})` }}>
             <div className="flex items-center justify-between pt-2 mx-4 md:justify-around">
                 <div className="flex items-center">
-                    <img className=" h-10 mr-2  md:w-[55px] lg:h-[60px] md:h-12 lg:w-12 xl:w-20  " src={logo1} alt="" />
-                    <h1 className=" text-3xl md:text-4xl lg:text-5xl  text-white">Espresso Emporium</h1>
+                    <img className=" h-8 mr-2  md:w-[40px] lg:w-12 xl:w-16 lg:h-[55px] md:h-10 " src={logo1} alt="" />
+                    <h1 className=" text-[28px] md:text-3xl lg:text-4xl  text-white">Espresso Emporium</h1>
                 </div>
                 <nav className="md:hidden">
                     <button onClick={toggleMenu} className="text-white text-3xl hover:text-gray-300">

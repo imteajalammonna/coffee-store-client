@@ -1,8 +1,10 @@
 import BGIMG from "../assets/images/more/11.png"
 import Arrow from "../assets/images/icons/Frame.png"
 import { Link } from "react-router-dom";
-
+import Swal from 'sweetalert2'
 const ProductForm = () => {
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -16,14 +18,28 @@ const ProductForm = () => {
         const details = form.details.value;
         const photo = form.photo.value;
 
-        const formData = { name, chef, supplier, taste, category, details, photo }
-        console.log(formData);
-        
-        fetch("http://localhost:5000/coffee")
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
+        const newCoffee = { name, chef, supplier, taste, category, details, photo }
+        console.log(newCoffee);
+
+        fetch("http://localhost:5000/coffee", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newCoffee)
         })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'You have added successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
     };
 
     return (
@@ -35,7 +51,7 @@ const ProductForm = () => {
                         <h2 className="text-3xl mb-4 text-shadow font-bold">Add New Coffee</h2>
                         <p className="font-sans mb-10">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label htmlFor="name" className="block text-gray-700">Name:</label>
                             <input placeholder="Coffee Name" type="text" id="name" name="name" className="w-full px-4 py-2 border rounded-md" />
@@ -45,7 +61,7 @@ const ProductForm = () => {
                             <input placeholder="Chef" type="text" id="chef" name="chef" className="w-full px-4 py-2 border rounded-md" />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label htmlFor="supplier" className="block text-gray-700">Supplier:</label>
                             <input placeholder="Supplier" type="text" id="supplier" name="supplier" className="w-full px-4 py-2 border rounded-md" />
@@ -55,7 +71,7 @@ const ProductForm = () => {
                             <input placeholder="Taste" type="text" id="taste" name="taste" className="w-full px-4 py-2 border rounded-md" />
                         </div>
                     </div>
-                    <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                         <div>
                             <label htmlFor="category" className="block text-gray-700">Category:</label>
                             <input placeholder="Category" type="text" id="category" name="category" className="w-full px-4 py-2 border rounded-md" />
@@ -66,8 +82,8 @@ const ProductForm = () => {
                         </div>
                     </div>
                     <div className="mb-4">
-                        <label htmlFor="photo" className="block text-gray-700">Photo:</label>
-                        <input type="file" id="photo" name="photo" accept="image/*" className="w-full bg-white px-4 py-2 border rounded-md" />
+                        <label htmlFor="photo" className="block text-gray-700">Photo</label>
+                        <input placeholder="Photo" type="text" id="photo" name="photo" className="w-full bg-white px-4 py-2 border rounded-md" />
                     </div>
                     <div>
                         <button type="submit" className="button w-full">Submit</button>

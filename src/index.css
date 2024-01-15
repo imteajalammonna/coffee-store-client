@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
-
+/* @import '~aos/dist/aos.css'; */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,7 +20,6 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    /* width: 130px; */
     height: 48px;
     flex-shrink: 0;
     background: #E3B577;
@@ -28,16 +27,18 @@
     transition: 0.5s ease;
     outline-offset: 4px;
     outline: 3px solid #E3B577;
-    
-    
-    
+
+}
+
+.btn-w {
+    width: 130px;
 }
 
 .button:hover {
     /* background: transparent; */
     /* color: white; */
     opacity: 0.8;
-    transform: scale(.9) ;
+    transform: scale(.9);
     /* border: 2px solid white; */
     /* outline: 3px solid white; */
 }
@@ -63,6 +64,7 @@
     color: white;
     border: 2px solid #E3B577;
 }
+
 .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
