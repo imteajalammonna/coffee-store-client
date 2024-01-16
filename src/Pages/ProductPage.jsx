@@ -5,7 +5,7 @@ import cup from "../assets/images/icons/Vector.png";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import Coffee from "./Coffee";
 
@@ -13,7 +13,8 @@ import Coffee from "./Coffee";
 
 const ProductPage = () => {
 
-    const coffees = useLoaderData();
+    const loadedCoffees = useLoaderData();
+    const [coffees, setCoffees] = useState(loadedCoffees);
 
 
     useEffect(() => {
@@ -33,7 +34,13 @@ const ProductPage = () => {
                     </Link>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    {coffees.map((coffee) => <Coffee coffee={coffee} key={coffee._id}></Coffee>)}
+                    {coffees.map((coffee) =>
+                        <Coffee
+                            coffee={coffee}
+                            coffees={coffees}
+                            setCoffees={setCoffees}
+                            key={coffee._id}
+                        ></Coffee>)}
                 </div>
             </div>
         </div>

@@ -2,10 +2,11 @@ import { FaEye } from "react-icons/fa";
 import { MdDelete, MdEdit } from "react-icons/md";
 import PropTypes from 'prop-types';
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-const Coffee = ({ coffee }) => {
+const Coffee = ({ coffee, coffees, setCoffees }) => {
     //taste, category, details,
-    const { _id, name, chef, supplier, photo } = coffee;
+    const { _id, name, supplier, chef, price, photo } = coffee;
 
     const handleDelete = _id => {
         Swal.fire({
@@ -30,7 +31,10 @@ const Coffee = ({ coffee }) => {
                                 title: "Deleted!",
                                 text: "Your Coffee has been deleted.",
                                 icon: "success"
-                            });
+                            })
+
+                            const remaining = coffees.filter(cof => cof._id !== _id);
+                            setCoffees(remaining)
                         }
                     })
             }
@@ -38,24 +42,42 @@ const Coffee = ({ coffee }) => {
     }
 
     return (
-        <div data-aos="fade-down" className="bg-[#F5F4F1] bg-opacity-75  md:p-4 flex md:justify-between  rounded-lg">
-            <img src={photo} alt={name} className=" mb-4 rounded-md" />
-            <div className="font-sans flex flex-col justify-center">
-                <h3 className="text-xl font-sans font-bold mb-2">Name: <span> {name}</span></h3>
-                <p className="text-gray-600 mb-2">{supplier}</p>
-                <p className="text-gray-500 mb-4 font-bold">Chef: {chef}</p>
+        <div data-aos="fade-down"
+            className="justify-around md:space-x-10
+                        grid grid-cols-2 md:grid-cols-3 p-3 m-2 rounded-lg bg-[#F5F4F1] bg-opacity-75"
+        >
+
+            <img src={photo} alt={name} className="" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:mt-6 md:col-span-2 ">
+                <div className="md:col-span-1 w-full">
+                    <h3 className="text-xl font-sans font-bold mb-2">Name: <span>{name}</span></h3>
+                    <p className="font-bold font-sans mb-2">Supplier: <span>{supplier}</span></p>
+                    <p className="mb-4 font-sans font-bold">Chef: <span>{chef}</span></p>
+                    <p className="mb-4 font-sans font-bold">Price: <span>{price}</span></p>
+                </div>
+                <div className="md:col-span-1 grid grid-cols-3 md:grid-cols-1 md:ml-[100px] gap-6">
+                    <button className="bg-[#E3B577] text-white w-4 h-4 p-3 rounded">
+                        <FaEye />
+                    </button>
+                    <Link to={`/updateCoffee/${_id}`}>
+                        <button className="bg-black text-white w-4 h-4 mr-4 p-3 rounded">
+                            <MdEdit />
+                        </button>
+                    </Link>
+                    <button onClick={() => handleDelete(_id)} className="bg-red-500 text-white w-4 h-4 p-3 rounded hover:bg-red-600">
+                        <MdDelete />
+                    </button>
+                </div>
             </div>
-            <div className="flex justify-center items-center flex-col space-y-5 mx-16">
-                <button className="bg-[#E3B577] text-white px-3 py-3 rounded "><FaEye></FaEye></button>
-                <button className="bg-black text-white px-3 py-3 rounded"><MdEdit></MdEdit></button>
-                <button onClick={() => handleDelete(_id)} className="bg-red-500 text-white px-3 py-3 rounded hover:bg-red-600"><MdDelete></MdDelete></button>
-            </div>
+
         </div>
     );
 };
 
 Coffee.propTypes = {
-    coffee: PropTypes.object.isRequired
+    coffee: PropTypes.object.isRequired,
+    coffees: PropTypes.array.isRequired,
+    setCoffees: PropTypes.func.isRequired,
 }
 
 export default Coffee;

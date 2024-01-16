@@ -8,6 +8,9 @@
     font-family: 'Rancho', cursive;
 
 }
+button {
+    box-sizing: content-box; /* or border-box */
+  }
 
 .active {
     color: #E3B577;
