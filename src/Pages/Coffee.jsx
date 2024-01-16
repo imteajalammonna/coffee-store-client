@@ -44,7 +44,7 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
     return (
         <div data-aos="fade-down"
             className="justify-around md:space-x-10
-                        grid grid-cols-2 md:grid-cols-3 p-3 m-2 rounded-lg bg-[#F5F4F1] bg-opacity-75"
+                        grid grid-cols-2 md:grid-cols-3 p-4 m-2 rounded-lg bg-[#F5F4F1] bg-opacity-75"
         >
 
             <img src={photo} alt={name} className="" />

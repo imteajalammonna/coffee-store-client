@@ -56,7 +56,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="h-[6vh] flex items-center justify-center" style={{ backgroundImage: `url(${footerBg})` }}>
-                <h3 className=" text-lg md:text-2xl text-white">Copyright Espresso Emporium ! All Rights Reserved . Developed by Monna.❤️</h3>
+                <h3 className="  md:text-2xl text-white">Copyright Espresso Emporium ! All Rights Reserved . Developed by Monna.❤️</h3>
             </div>
         </footer>
     );
