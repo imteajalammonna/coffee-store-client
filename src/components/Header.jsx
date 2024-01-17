@@ -3,18 +3,22 @@ import header from "../assets/images/more/15.jpg"
 import logo1 from "../assets/images/more/logo1.png";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { RxCross2 } from "react-icons/rx";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "./AuthProvider";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const {user} =useContext(AuthContext);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
     const links = <>
-        <NavLink to="/" className="hover:text-[#E3B577] duration-300">Home</NavLink>
-        <NavLink to="/productForm" className="hover:text-[#E3B577] duration-300">Add New Coffee</NavLink>
-        <NavLink to="/coffee" className="hover:text-[#E3B577] duration-300">Coffees</NavLink>
+        <NavLink to="/" className="hover:text-[#E3B577] duration-300 font-serif text-xl">Home</NavLink>
+        <NavLink to="/productForm" className="hover:text-[#E3B577] duration-300 font-serif text-xl">Add Coffee</NavLink>
+        <NavLink to="/coffee" className="hover:text-[#E3B577] duration-300 font-serif text-xl">Coffees</NavLink>
+        <NavLink to="/login" className="hover:text-[#E3B577] duration-300 font-serif text-xl">Login</NavLink>
     </>
     return (
         <header className="md:bg-cover bg-center  h-[7vh] text-white " style={{ backgroundImage: `url(${header})` }}>
@@ -32,6 +36,7 @@ const Header = () => {
                 <nav className={`md:flex md:space-x-8 text-2xl transition-all ${isMenuOpen ? 'rounded p-5 mt-32 bg-slate-400 flex flex-col absolute' : 'hidden'}`}>
                     {links}
                 </nav>
+                <div className="flex  items-center">{user?.displayName} <img className="rounded-full w-12 ml-5" src={user.photoURL} alt="" /></div>
             </div>
         </header>
     );

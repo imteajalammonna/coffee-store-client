@@ -11,6 +11,9 @@ import Error from "./Pages/Error";
 import ProductForm from "./Pages/ProductForm";
 import UpdateACoffee from "./Pages/UpdateACoffee";
 import ProductPage from "./Pages/ProductPage";
+import Details from "./Pages/Details";
+import Login from "./Pages/Login";
+import AuthProvider from "./components/AuthProvider";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +24,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/coffee')
+        loader: () => fetch('https://coffee-store-server-9ksmicv77-monnas-projects.vercel.app/coffee')
       },
       {
         path: "/productForm",
@@ -34,12 +37,20 @@ const router = createBrowserRouter([
       {
         path: "/coffee",
         element: <ProductPage></ProductPage>,
-        loader: () => fetch('http://localhost:5000/coffee')
+        loader: () => fetch('https://coffee-store-server-9ksmicv77-monnas-projects.vercel.app/coffee')
+      },
+      {
+        path: "/details",
+        element: <Details></Details>
+      },
+      {
+        path: "/login",
+        element: <Login></Login>
       },
       {
         path: "/updateCoffee/:id",
         element: <UpdateACoffee></UpdateACoffee>,
-        loader: ({ params }) => fetch(`http://localhost:5000/coffee/${params.id}`)
+        loader: ({ params }) => fetch(`https://coffee-store-server-9ksmicv77-monnas-projects.vercel.app/coffee/${params.id}`)
       },
     ]
   },
@@ -47,6 +58,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>
 );

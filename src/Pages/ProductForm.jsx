@@ -21,7 +21,7 @@ const ProductForm = () => {
         const newCoffee = { name, chef, supplier, taste, category, price, photo }
         console.log(newCoffee);
 
-        fetch("http://localhost:5000/coffee", {
+        fetch("https://coffee-store-server-9ksmicv77-monnas-projects.vercel.app//coffee", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

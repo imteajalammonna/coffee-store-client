@@ -20,7 +20,7 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/coffee/${_id}`, {
+                fetch(`https://coffee-store-server-9ksmicv77-monnas-projects.vercel.app//coffee/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -53,12 +53,14 @@ const Coffee = ({ coffee, coffees, setCoffees }) => {
                     <h3 className="text-xl font-sans font-bold mb-2">Name: <span>{name}</span></h3>
                     <p className="font-bold font-sans mb-2">Supplier: <span>{supplier}</span></p>
                     <p className="mb-4 font-sans font-bold">Chef: <span>{chef}</span></p>
-                    <p className="mb-4 font-sans font-bold">Price: <span>{price}</span></p>
+                    <p className="mb-4 font-sans font-bold">Price: <span>{price} TK</span></p>
                 </div>
                 <div className="md:col-span-1 grid grid-cols-3 md:grid-cols-1 md:ml-[100px] gap-6">
-                    <button className="bg-[#E3B577] text-white w-4 h-4 p-3 rounded">
-                        <FaEye />
-                    </button>
+                    <Link to="/details">
+                        <button className="bg-[#E3B577] text-white w-4 h-4 p-3 rounded">
+                            <FaEye />
+                        </button>
+                    </Link>
                     <Link to={`/updateCoffee/${_id}`}>
                         <button className="bg-black text-white w-4 h-4 mr-4 p-3 rounded">
                             <MdEdit />

@@ -10,16 +10,18 @@
     font-family: 'Rancho', cursive;
 
 }
+
 button {
-    box-sizing: content-box; /* or border-box */
-  }
+    box-sizing: content-box;
+    /* or border-box */
+}
 
 .active {
     color: #E3B577;
 }
 
 .button {
-    color: #242222;
+    color: #fff;
     font-family: Rancho;
     font-size: 24px;
     font-style: normal;
@@ -41,7 +43,7 @@ button {
 
 .button:hover {
     /* background: transparent; */
-    /* color: white; */
+    color: white;
     opacity: 0.8;
     transform: scale(.9);
     /* border: 2px solid white; */
@@ -73,3 +75,4 @@ button {
 .text-shadow {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
+

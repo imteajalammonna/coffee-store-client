@@ -37,7 +37,7 @@ const CoffeesPhotos = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-6 md:mx-24">
                     {photosData.map((photo, index) => (
 
-                        <img data-aos={photo.animation} key={index} src={photo.image} alt={`coffees photo`} className="md:w-[312px] md:h-[330px]" />
+                        <img data-aos={photo.animation} key={index} src={photo.image} alt={`coffees photo`} className="md:w-[312px] md:h-[330px] " />
 
                     ))}
                 </div>
